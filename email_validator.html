@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Email Validation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+        }
+        input {
+            padding: 8px;
+            width: 250px;
+        }
+        button {
+            padding: 8px 15px;
+            margin-left: 5px;
+        }
+        #result {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Email Validation</h2>
+
+    <!-- Step 1: Textbox for email input -->
+    <input type="text" id="email" placeholder="Enter email address">
+
+    <!-- Step 2: Button to trigger validation -->
+    <button onclick="validateEmail()">Check Email</button>
+
+    <!-- Step 4: Display result -->
+    <div id="result"></div>
+
+    <script>
+        function validateEmail() {
+            // Step 3: Regex pattern for email validation
+            var email = document.getElementById("email").value;
+            var regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (regex.test(email)) {
+                document.getElementById("result").innerHTML = "Valid Email";
+                document.getElementById("result").style.color = "green";
+            } else {
+                document.getElementById("result").innerHTML = "Invalid Email";
+                document.getElementById("result").style.color = "red";
+            }
+        }
+    </script>
+
+</body>
+</html>
