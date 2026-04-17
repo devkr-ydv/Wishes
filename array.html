@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Array Operations</title>
+</head>
+<body>
+
+    <h2>Array Operations Using JavaScript</h2>
+
+    <!-- Text box for input -->
+    <input type="text" id="valueInput" placeholder="Enter a value">
+
+    <br><br>
+
+    <!-- Buttons for array operations -->
+    <button onclick="addPush()">Push</button>
+    <button onclick="removePop()">Pop</button>
+    <button onclick="addUnshift()">Unshift</button>
+    <button onclick="removeShift()">Shift</button>
+
+    <br><br>
+
+    <!-- Paragraph to display array -->
+    <p id="arrayDisplay"></p>
+
+    <script>
+        // Create an empty array
+        var arr = [];
+
+        function displayArray() {
+            document.getElementById("arrayDisplay").innerHTML =
+                "Array Elements: " + arr.join(", ");
+        }
+
+        function addPush() {
+            var value = document.getElementById("valueInput").value;
+            if (value !== "") {
+                arr.push(value);
+                displayArray();
+            }
+        }
+
+        function removePop() {
+            arr.pop();
+            displayArray();
+        }
+
+        function addUnshift() {
+            var value = document.getElementById("valueInput").value;
+            if (value !== "") {
+                arr.unshift(value);
+                displayArray();
+            }
+        }
+
+        function removeShift() {
+            arr.shift();
+            displayArray();
+        }
+    </script>
+
+</body>
+</html>
